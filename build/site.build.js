@@ -16,7 +16,12 @@ module.exports =  List;
 },{"./task":2}],2:[function(require,module,exports){
 exports.foo = function() {
     console.log("task");
+    var toDoInput = document.getElementById('to-do-input');
+    console.log(toDoInput);
 }
+
+
+
 
 },{}],3:[function(require,module,exports){
 (function(window, document) {
