@@ -4,11 +4,21 @@ exports.foo = function() {
     console.log(toDoInput);
 }
 
+function Task() {
+
+}
+
+
+module.exports =  Task;
+
+
 /**
- * v1 What this will need to do
- * return the input value
- * append value as string to ol
- * if input has no content disable add ability
  *
+ * 1) aid drag and drop functionality
+ * 2) have an edit button, converting string into input
+ * 3) delete button, remove from the DOM
  */
+
+
+
 

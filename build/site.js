@@ -13,12 +13,26 @@ List.prototype = {
 
 module.exports =  List;
 
+
+
+$(document).ready(function(){
+    
+});
 },{"./task":2}],2:[function(require,module,exports){
 exports.foo = function() {
     console.log("task");
     var toDoInput = document.getElementById('to-do-input');
     console.log(toDoInput);
 }
+
+function Task() {
+
+}
+
+
+module.exports =  Task;
+
+
 
 /**
  * v1 What this will need to do

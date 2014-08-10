@@ -10,7 +10,8 @@
     "grunt-contrib-concat": "*",
     "grunt-autoprefixer": "^0.8.2",
     "browserify": "^5.9.1",
-    "grunt-browserify": "^2.1.4"
+    "grunt-browserify": "^2.1.4",
+    "jquery-latest": "^1.9.0"
   },
   "devDependencies": {
     "grunt-autoprefixer": "^0.8.2"
