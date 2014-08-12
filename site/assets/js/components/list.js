@@ -20,25 +20,6 @@
  *
  *
  */
-//function getValue() {
-//    var todoInput;
-//    todoInput = $('#todo-input');
-//    console.log(todoInput.value());
-//    return false;
-//}
-//
-//
-//var list = document.getElementById('todoList');
-//
-//exports.addItem = function() {
-//    var todoInput = document.getElementById('todo_input').value;
-////    document.getElementById('boldStuff2').innerHTML = firstname;
-//    var entry = document.createElement('li');
-//    entry.appendChild(document.createTextNode(todoInput));
-//    list.appendChild(entry);
-//}
-
-
 
 
 //module.exports =  changeText2;
@@ -48,17 +29,6 @@
  * append it to the <ol> of todos
  *
  */
-
-//
-//$(document).ready(function(){
-//
-//    $("#todo").submit(function () {
-//        getValue();
-//        return false;
-//    });
-//
-//
-//});
 
 
 

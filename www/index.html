@@ -9,7 +9,7 @@
 
 
         <input type="text" id="todo_input" class='new-to-do-input' autocomplete="off" autofocus>
-        <input id="submit" onclick='addItem()' type='submit' value='Add'>
+        <!--<input id="submit" onclick='' type='submit' value='Add'>-->
 
         <ol id="todoList" class='todo-list'>
 
@@ -28,6 +28,7 @@
          *  - strike through something that is done
          *  - re order what is there
          *  - add code to browserify
+         *  - edit a line item
 
         /**
          * It
@@ -35,24 +36,57 @@
          *  - creates a li and appends to list
          *  - clears the input
          */
+
+        document.getElementById('todo_input').onkeydown = function(e){
+            if(e.keyCode == 13){
+                addItem();
+            }
+        };
+
         function addItem() {
-            var list, todoInput, entry;
+            var list, todoInput, entry, div, divContent;
 
             list = document.getElementById('todoList');
             todoInput = document.getElementById('todo_input').value;
             entry = document.createElement('li');
+//            fragmentLi = document.createDocumentFragment(); don't really need it…
+            div = document.createElement("div");
+            divContent = document.createTextNode("X");
 
+            div.appendChild(divContent);
+            div.className = 'killSwitch';
             entry.appendChild(document.createTextNode(todoInput));
+            entry.appendChild(div);
             list.appendChild(entry);
+
             clearInput();
+            killSwitch();
+            strikeOut();
         }
-
-
 
         function clearInput() {
             var todoInput = document.getElementById('todo_input');
             todoInput.value = ' ';
         }
+
+        function killSwitch() {
+//            var killSwitch = document.getElementsByClassName('killSwitch');
+            $('.killSwitch').on('click', function() {
+               $(this).parent().hide();
+            });
+        }
+
+        function strikeOut() {
+            $('.todo-list').on('click', 'li', function() {
+                $(this).addClass('done');
+            });
+        }
+
+        function editItem() {
+
+        }
+
+
 
 
 

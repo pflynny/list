@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 400px;
+    /*max-width: 400px;*/
     margin: auto;
     text-align: center;
 }
@@ -56,16 +56,37 @@ ol {
     list-style: none;
     text-align: left;
     font-weight: bold;
+    width: 100%;
+    margin: 30px 0 0;
+    padding: 0;
 
 }
 
 li {
+
     border-top: 1px solid #eee;
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: block;
+    cursor: pointer;
 }
 
 li:last-child {
     border-bottom: 1px solid #eee;
+}
+
+.killSwitch {
+    float: right;
+    background: red;
+    padding: 3px 6px 2px;
+    margin: -3px 0 0 0;
+    cursor: pointer;
+}
+
+.done {
+    text-decoration:line-through;
+    color: #ccc;
+
 }

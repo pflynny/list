@@ -26,25 +26,6 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
  *
  *
  */
-//function getValue() {
-//    var todoInput;
-//    todoInput = $('#todo-input');
-//    console.log(todoInput.value());
-//    return false;
-//}
-//
-//
-//var list = document.getElementById('todoList');
-//
-//exports.addItem = function() {
-//    var todoInput = document.getElementById('todo_input').value;
-////    document.getElementById('boldStuff2').innerHTML = firstname;
-//    var entry = document.createElement('li');
-//    entry.appendChild(document.createTextNode(todoInput));
-//    list.appendChild(entry);
-//}
-
-
 
 
 //module.exports =  changeText2;
@@ -54,17 +35,6 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
  * append it to the <ol> of todos
  *
  */
-
-//
-//$(document).ready(function(){
-//
-//    $("#todo").submit(function () {
-//        getValue();
-//        return false;
-//    });
-//
-//
-//});
 
 
 
