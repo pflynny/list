@@ -1,7 +1,7 @@
 (function(window, document) {
     "use strict";
 
-//    var List = require('./components/list.js');
+    var List = require('./components/list.js');
 //    var task = require('./components/task.js');
     // var quicktube = require("./components/QuickTube.js");
 
@@ -28,7 +28,8 @@
             console.log(this);
 
 
-//            List.addItem();
+            List();
+//            List.add();
 //            console.log('yoo');
 //            console.log(List.changeText2);
 
@@ -38,7 +39,9 @@
             //
 //            console.log(List);
 //            task.foo();
-//            console.log(new List());
+//            var test = new List();
+//               test;
+            console.log(new List().add());
         }
     };
 

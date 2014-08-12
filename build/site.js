@@ -1,17 +1,59 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //var task = require('./task');
 //
-//function List() {
-//
-//}
-//
-//List.prototype = {
-//    add: function() {
-//
-//    }
-//}
-//
-//module.exports =  List;
+function List() {
+    var list, todoInput, entry, div, divContent;
+
+    list = document.getElementById('todoList');
+    todoInput = document.getElementById('todo_input').value;
+    entry = document.createElement('li');
+    div = document.createElement("div");
+    divContent = document.createTextNode("X");
+
+    this.list = list;
+    this.todoInput = todoInput;
+    this.div = div;
+    this.entry = entry;
+    this.divContent = divContent;
+
+}
+
+List.prototype = {
+    add: function() {
+
+        this.div.appendChild(divContent);
+        this.div.className = 'killSwitch';
+        this.entry.appendChild(document.createTextNode(todoInput));
+        this.entry.appendChild(div);
+        this.list.appendChild(entry);
+
+        console.log(this.entry);
+
+        console.log('flhvsfhbjb');
+    },
+
+    clearInput: function() {
+        var todoInput = document.getElementById('todo_input');
+        todoInput.value = ',cbvds,bv';
+    },
+
+    killSwitch: function() {
+//            var killSwitch = document.getElementsByClassName('killSwitch');
+        $('.killSwitch').on('click', function() {
+            $(this).parent().hide();
+        });
+    },
+
+    strikeOut: function() {
+        $('.todo-list').on('click', 'li', function() {
+            $(this).addClass('done');
+            $('.killSwitch', this).show();
+        });
+    }
+
+}
+
+module.exports =  List;
 
 
 /**
@@ -22,8 +64,6 @@
  *
  */
 
-
-//module.exports =  changeText2;
 
 /**
  * this will use getValue's value and
@@ -71,7 +111,7 @@ module.exports =  Task;
 (function(window, document) {
     "use strict";
 
-//    var List = require('./components/list.js');
+    var List = require('./components/list.js');
 //    var task = require('./components/task.js');
     // var quicktube = require("./components/QuickTube.js");
 
@@ -98,7 +138,8 @@ module.exports =  Task;
             console.log(this);
 
 
-//            List.addItem();
+            List();
+//            List.add();
 //            console.log('yoo');
 //            console.log(List.changeText2);
 
@@ -108,7 +149,9 @@ module.exports =  Task;
             //
 //            console.log(List);
 //            task.foo();
-//            console.log(new List());
+//            var test = new List();
+//               test;
+            console.log(new List().add());
         }
     };
 
@@ -120,4 +163,4 @@ module.exports =  Task;
 
 
 
-},{}]},{},[1,2,3]);
+},{"./components/list.js":1}]},{},[1,2,3]);
