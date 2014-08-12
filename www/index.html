@@ -44,23 +44,16 @@
         };
 
         function addItem() {
-            var list, todoInput, entry, div, divContent;
+            var list, todoInput, entry;
 
             list = document.getElementById('todoList');
             todoInput = document.getElementById('todo_input').value;
             entry = document.createElement('li');
-//            fragmentLi = document.createDocumentFragment(); don't really need it…
-            div = document.createElement("div");
-            divContent = document.createTextNode("X");
 
-            div.appendChild(divContent);
-            div.className = 'killSwitch';
             entry.appendChild(document.createTextNode(todoInput));
-            entry.appendChild(div);
             list.appendChild(entry);
 
             clearInput();
-            killSwitch();
             strikeOut();
         }
 
@@ -77,8 +70,18 @@
         }
 
         function strikeOut() {
+            var  div, divContent;
+
+            div = document.createElement("div");
+            divContent = document.createTextNode("X");
+
+            div.appendChild(divContent);
+            div.className = 'killSwitch';
+
             $('.todo-list').on('click', 'li', function() {
                 $(this).addClass('done');
+                $(this).append(div);
+                killSwitch();
             });
         }
 
