@@ -51,5 +51,21 @@ input[type='submit']:focus {
     box-shadow: 0 0 6px rgba(48, 140, 255, 0.25);
 }
 
+ol {
+    text-transform: uppercase;
+    list-style: none;
+    text-align: left;
+    font-weight: bold;
 
+}
 
+li {
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 40px;
+}
+
+li:last-child {
+    border-bottom: 1px solid #eee;
+}

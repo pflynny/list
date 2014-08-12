@@ -20,23 +20,25 @@
  *
  *
  */
-function getValue() {
-    var todoInput;
-    todoInput = $('#todo-input');
-    console.log(todoInput.value());
-    return false;
-}
+//function getValue() {
+//    var todoInput;
+//    todoInput = $('#todo-input');
+//    console.log(todoInput.value());
+//    return false;
+//}
+//
+//
+//var list = document.getElementById('todoList');
+//
+//exports.addItem = function() {
+//    var todoInput = document.getElementById('todo_input').value;
+////    document.getElementById('boldStuff2').innerHTML = firstname;
+//    var entry = document.createElement('li');
+//    entry.appendChild(document.createTextNode(todoInput));
+//    list.appendChild(entry);
+//}
 
 
-var list = document.getElementById('todoList');
-
-exports.addItem = function() {
-    var todoInput = document.getElementById('todo_input').value;
-//    document.getElementById('boldStuff2').innerHTML = firstname;
-    var entry = document.createElement('li');
-    entry.appendChild(document.createTextNode(todoInput));
-    list.appendChild(entry);
-}
 
 
 //module.exports =  changeText2;
@@ -47,16 +49,16 @@ exports.addItem = function() {
  *
  */
 
-
-$(document).ready(function(){
-
-    $("#todo").submit(function () {
-        getValue();
-        return false;
-    });
-
-
-});
+//
+//$(document).ready(function(){
+//
+//    $("#todo").submit(function () {
+//        getValue();
+//        return false;
+//    });
+//
+//
+//});
 
 
 

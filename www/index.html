@@ -8,7 +8,7 @@
        <h1>Add something</h1>
 
 
-        <input type="text" id="todo_input" class='new-to-do-input' autocomplete="off">
+        <input type="text" id="todo_input" class='new-to-do-input' autocomplete="off" autofocus>
         <input id="submit" onclick='addItem()' type='submit' value='Add'>
 
         <ol id="todoList" class='todo-list'>
@@ -20,15 +20,42 @@
 
     <script>
 
-        var list = document.getElementById('todoList');
 
+        /**
+         * to add
+         *  - delete a line item
+         *  - keyboard enter
+         *  - strike through something that is done
+         *  - re order what is there
+         *  - add code to browserify
+
+        /**
+         * It
+         *  - gets input by id and extracts the value
+         *  - creates a li and appends to list
+         *  - clears the input
+         */
         function addItem() {
-            var todoInput = document.getElementById('todo_input').value;
-//    document.getElementById('boldStuff2').innerHTML = firstname;
-            var entry = document.createElement('li');
+            var list, todoInput, entry;
+
+            list = document.getElementById('todoList');
+            todoInput = document.getElementById('todo_input').value;
+            entry = document.createElement('li');
+
             entry.appendChild(document.createTextNode(todoInput));
             list.appendChild(entry);
+            clearInput();
         }
+
+
+
+        function clearInput() {
+            var todoInput = document.getElementById('todo_input');
+            todoInput.value = ' ';
+        }
+
+
+
 
 
     </script>

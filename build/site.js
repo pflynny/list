@@ -21,23 +21,25 @@
  *
  *
  */
-function getValue() {
-    var todoInput;
-    todoInput = $('#todo-input');
-    console.log(todoInput.value());
-    return false;
-}
+//function getValue() {
+//    var todoInput;
+//    todoInput = $('#todo-input');
+//    console.log(todoInput.value());
+//    return false;
+//}
+//
+//
+//var list = document.getElementById('todoList');
+//
+//exports.addItem = function() {
+//    var todoInput = document.getElementById('todo_input').value;
+////    document.getElementById('boldStuff2').innerHTML = firstname;
+//    var entry = document.createElement('li');
+//    entry.appendChild(document.createTextNode(todoInput));
+//    list.appendChild(entry);
+//}
 
 
-var list = document.getElementById('todoList');
-
-exports.addItem = function() {
-    var todoInput = document.getElementById('todo_input').value;
-//    document.getElementById('boldStuff2').innerHTML = firstname;
-    var entry = document.createElement('li');
-    entry.appendChild(document.createTextNode(todoInput));
-    list.appendChild(entry);
-}
 
 
 //module.exports =  changeText2;
@@ -48,16 +50,16 @@ exports.addItem = function() {
  *
  */
 
-
-$(document).ready(function(){
-
-    $("#todo").submit(function () {
-        getValue();
-        return false;
-    });
-
-
-});
+//
+//$(document).ready(function(){
+//
+//    $("#todo").submit(function () {
+//        getValue();
+//        return false;
+//    });
+//
+//
+//});
 
 
 
@@ -99,7 +101,7 @@ module.exports =  Task;
 (function(window, document) {
     "use strict";
 
-    var List = require('./components/list.js');
+//    var List = require('./components/list.js');
 //    var task = require('./components/task.js');
     // var quicktube = require("./components/QuickTube.js");
 
@@ -126,8 +128,8 @@ module.exports =  Task;
             console.log(this);
 
 
-            List.addItem();
-            console.log('yoo');
+//            List.addItem();
+//            console.log('yoo');
 //            console.log(List.changeText2);
 
             // if (!window.addEventListener) {
@@ -148,4 +150,4 @@ module.exports =  Task;
 
 
 
-},{"./components/list.js":1}]},{},[1,2,3]);
+},{}]},{},[1,2,3]);
