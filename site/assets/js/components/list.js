@@ -21,31 +21,34 @@
  *
  */
 function getValue() {
-
     var todoInput;
-
     todoInput = $('#todo-input');
     console.log(todoInput.value());
-
     return false;
-
 }
+
+
+var list = document.getElementById('todoList');
+
+exports.addItem = function() {
+    var todoInput = document.getElementById('todo_input').value;
+//    document.getElementById('boldStuff2').innerHTML = firstname;
+    var entry = document.createElement('li');
+    entry.appendChild(document.createTextNode(todoInput));
+    list.appendChild(entry);
+}
+
+
+//module.exports =  changeText2;
 
 /**
  * this will use getValue's value and
  * append it to the <ol> of todos
  *
  */
-function addItem() {
-
-}
-
-
-
 
 
 $(document).ready(function(){
-
 
     $("#todo").submit(function () {
         getValue();

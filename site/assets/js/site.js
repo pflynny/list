@@ -2,7 +2,7 @@
     "use strict";
 
     var List = require('./components/list.js');
-    var task = require('./components/task.js');
+//    var task = require('./components/task.js');
     // var quicktube = require("./components/QuickTube.js");
 
     /**
@@ -26,13 +26,19 @@
     Site.prototype = {
         init: function() {
             console.log(this);
+
+
+            List.addItem();
+            console.log('yoo');
+//            console.log(List.changeText2);
+
             // if (!window.addEventListener) {
             //     return;
             // }
             //
-            console.log(List);
-            task.foo();
-            console.log(new List());
+//            console.log(List);
+//            task.foo();
+//            console.log(new List());
         }
     };
 
