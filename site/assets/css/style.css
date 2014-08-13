@@ -1,10 +1,12 @@
 body {
     color: #333;
-    font-family: Helvetica, Arial, sans-serif
+    font-family: Helvetica, Arial, sans-serif;
+    /*background: #126b7a;
+    color: #b7f4f2;*/
 }
 
 .container {
-    max-width: 400px;
+    /*max-width: 400px;*/
     margin: auto;
     text-align: center;
 }
@@ -13,4 +15,95 @@ body {
     color: red;
     font-size: 20px;
     background: blue;
+}
+
+
+form {
+    background: #fff;
+    padding: 1em 1.25em;
+    border: solid 1px #ccc;
+    border-radius: .25em;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='submit'],
+select {
+    font-size: 1em;
+    border-radius: .25em;
+    -webkit-appearance: none;
+}
+
+input[type='text'],
+input[type='password'] {
+    border: solid 1px #ddd;
+    padding: .5em .5em;
+    color: #555;
+    width: 16em;
+}
+
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='submit']:focus {
+    outline: none;
+    border-color: #0B77DB;
+    box-shadow: 0 0 6px rgba(48, 140, 255, 0.25);
+}
+
+ol {
+    text-transform: uppercase;
+    list-style: none;
+    text-align: left;
+    font-weight: bold;
+    width: 100%;
+    margin: 30px 0 0;
+    padding: 0;
+
+}
+
+li {
+
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: block;
+    cursor: pointer;
+}
+
+li:last-child {
+    border-bottom: 1px solid #eee;
+}
+
+.killSwitch {
+    float: right;
+    background: red;
+    padding: 3px 6px 2px;
+    margin: -3px 0 0 0;
+    cursor: pointer;
+    /*display: none;*/
+}
+
+.done {
+    text-decoration:line-through;
+    color: #ccc;
+
+}
+
+.edit-todo {
+    position: absolute;
+    right: 0;
+}
+
+
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
 }

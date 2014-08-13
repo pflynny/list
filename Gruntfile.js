@@ -33,13 +33,30 @@ module.exports = function(grunt) {
             },
         },
 
+
+        /**
+         * Let's use some proper module structure for the public site, woohoo!
+         * */
+        browserify: {
+            application: {
+                files: {
+                    '<%= paths.buildJavascript %>/site.js': [
+                        '<%= paths.javascript %>/components/**/*.js',
+                        '<%= paths.javascript %>/site.js'
+                    ]
+                }
+            }
+        },
+
+
+
         /**
          * JS stuff
          */
         concat: {
             lib: {
                 src: [
-                    // '<%= paths.javascript %>/libs/*.js',
+                    '<%= paths.javascript %>/libs/*.js',
                     '<%= paths.buildJavascript %>/site.js'
                 ],
                 dest: '<%= paths.buildJavascript %>/site.build.js'
@@ -80,22 +97,6 @@ module.exports = function(grunt) {
             },
             all: ['<%= paths.javascript %>/**/*.js']
         },
-
-        /**
-         * Let's use some proper module structure for the public site, woohoo!
-         * */
-        browserify: {
-            application: {
-                files: {
-                    '<%= paths.buildJavascript %>/site.js': [
-                        '<%= paths.javascript %>/components/**/*.js',
-                        '<%= paths.javascript %>/site.js'
-                    ]
-                },
-            }
-        },
-
-
 
         /**
          * Watch
@@ -158,8 +159,8 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("js", [
-        "concat:lib",
         "browserify",
+        "concat:lib",
         "concat:move"
         // "jshint:all",
         // "uglify:build"
