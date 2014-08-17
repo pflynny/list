@@ -83,7 +83,7 @@ li:last-child {
     padding: 3px 6px 2px;
     margin: -3px 0 0 0;
     cursor: pointer;
-    display: none;
+    /*display: none;*/
 }
 
 .done {

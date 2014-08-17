@@ -6,106 +6,107 @@
 <body>
     <div class='container'>
        <h1>Add something</h1>
+        <div id="todo">
+            <input type="text" id="todo_input" class='new-to-do-input todo-input' autocomplete="off" autofocus>
 
+            <ol id="todoList" class='todo-list'>
 
-        <input type="text" id="todo_input" class='new-to-do-input' autocomplete="off" autofocus>
-        <!--<input id="submit" onclick='' type='submit' value='Add'>-->
-
-        <ol id="todoList" class='todo-list'>
-
-        </ol>
+            </ol>
+        </div>
     </div>
     <script src='/assets/js/production.min.js'></script>
 
 
-    <script>
+    <!--<script>-->
 
 
-        /**
-         * to add
-         *  - delete a line item
-         *  - keyboard enter
-         *  - strike through something that is done
-         *  - re order what is there
-         *  - add code to browserify
-         *  - edit a line item
+        <!--/**-->
+         <!--* to add-->
+         <!--*  - delete a line item-->
+         <!--*  - keyboard enter-->
+         <!--*  - strike through something that is done-->
+         <!--*  - re order what is there-->
+         <!--*  - add code to browserify-->
+         <!--*  - edit a line item-->
 
-        /**
-         * It
-         *  - gets input by id and extracts the value
-         *  - creates a li and appends to list
-         *  - clears the input
-         */
+        <!--/**-->
+         <!--* It-->
+         <!--*  - gets input by id and extracts the value-->
+         <!--*  - creates a li and appends to list-->
+         <!--*  - clears the input-->
+         <!--*/-->
 
-        document.getElementById('todo_input').onkeydown = function(e){
-            if(e.keyCode == 13){
-                addItem();
-            }
-        };
+        <!--document.getElementById('todo_input').onkeydown = function(e){-->
+            <!--if(e.keyCode == 13){-->
+                <!--addItem();-->
+            <!--}-->
+        <!--};-->
 
-        function addItem() {
-            var list, todoInput, entry, div, divContent;
+        <!--function addItem() {-->
+            <!--var list, todoInput, entry, div, divContent;-->
 
-            list = document.getElementById('todoList');
-            todoInput = document.getElementById('todo_input').value;
-            entry = document.createElement('li');
-            div = document.createElement("div");
-            divContent = document.createTextNode("X");
-            entry.setAttribute("draggable","true");
-            entry.className = 'todo-item';
+            <!--list = document.getElementById('todoList');-->
+            <!--todoInput = document.getElementById('todo_input').value;-->
+            <!--entry = document.createElement('li');-->
+            <!--div = document.createElement("div");-->
+            <!--divContent = document.createTextNode("X");-->
+            <!--entry.setAttribute("draggable","true");-->
+            <!--entry.className = 'todo-item';-->
 
-            div.appendChild(divContent);
-            div.className = 'killSwitch';
-            entry.appendChild(document.createTextNode(todoInput));
-            entry.appendChild(div);
-            list.appendChild(entry);
+            <!--div.appendChild(divContent);-->
+            <!--div.className = 'killSwitch';-->
+            <!--entry.appendChild(document.createTextNode(todoInput));-->
+            <!--entry.appendChild(div);-->
+            <!--list.appendChild(entry);-->
 
-            clearInput();
-            killSwitch();
-            strikeOut();
-            editItem();
-        }
+            <!--clearInput();-->
+            <!--killSwitch();-->
+            <!--strikeOut();-->
+            <!--editItem();-->
+        <!--}-->
 
-        function clearInput() {
-            var todoInput = document.getElementById('todo_input');
-            todoInput.value = ' ';
-        }
+        <!--function clearInput() {-->
+            <!--var todoInput = document.getElementById('todo_input');-->
+            <!--todoInput.value = ' ';-->
+        <!--}-->
 
-        function killSwitch() {
-//            var killSwitch = document.getElementsByClassName('killSwitch');
-            $('.killSwitch').on('click', function() {
-               $(this).parent().hide();
-            });
-        }
+        <!--function killSwitch() {-->
+            <!--// this should remove the element from the dom-->
+<!--//            var killSwitch = document.getElementsByClassName('killSwitch');-->
+            <!--$('.killSwitch').on('click', function() {-->
+               <!--$(this).parent().hide();-->
+            <!--});-->
+        <!--}-->
 
-        function strikeOut() {
-            $('.todo-list').on('click', 'li', function() {
-                $(this).addClass('done');
-                $('.killSwitch', this).show();
-            });
-        }
+        <!--function strikeOut() {-->
+            <!--// this is a completeion-->
+            <!--$('.todo-list').on('click', 'li', function() {-->
+                <!--$(this).addClass('done');-->
+                <!--$('.killSwitch', this).show();-->
+            <!--});-->
+        <!--}-->
 
-        function editItem() {
-            //var list = document.getElementById('todoList');
+        <!--function editItem() {-->
+            <!--//var list = document.getElementById('todoList');-->
 
-            $( "li" ).hover(
-                    function() {
-                        $( this ).append( $( "<span class='edit-todo'>Edit</span>" ) );
-                    }, function() {
-                        $( this ).find( ".edit-todo" ).remove();
-                    }
-            );
+            <!--$( "li" ).hover(-->
+                    <!--function() {-->
+                        <!--$( this ).append( $( "<span class='edit-todo'>Edit</span>" ) );-->
+                    <!--}, function() {-->
+                        <!--$( this ).find( ".edit-todo" ).remove();-->
+                    <!--}-->
+            <!--);-->
 
-            $('li').on('click', '.edit-todo', function() {
-                var value = $(this).parent().text();
-                console.log($(this).parent().text());
-                $(this).html($( "<input type='text' class='edit' />" ));
-                $('.edit').val(value);
-            });
-        }
+            <!--$('li').on('click', '.edit-todo', function() {-->
+                <!--var value = $(this).parent().text();-->
+                <!--console.log($(this).parent().text());-->
+                <!--$(this).html($( "<input type='text' class='edit' />" ));-->
+                <!--$('.edit').val(value);-->
+            <!--});-->
+        <!--}-->
 
 
-    </script>
+    <!--</script>-->
 
 </body>
 </html>
