@@ -20,11 +20,11 @@ function List() {
 List.prototype = {
     add: function() {
 
-        this.div.appendChild(divContent);
+        this.div.appendChild(this.divContent);
         this.div.className = 'killSwitch';
-        this.entry.appendChild(document.createTextNode(todoInput));
-        this.entry.appendChild(div);
-        this.list.appendChild(entry);
+        this.entry.appendChild(document.createTextNode(this.todoInput));
+        this.entry.appendChild(this.div);
+        this.list.appendChild(this.entry);
 
         console.log(this.entry);
 

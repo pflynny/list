@@ -26,11 +26,11 @@ function List() {
 List.prototype = {
     add: function() {
 
-        this.div.appendChild(divContent);
+        this.div.appendChild(this.divContent);
         this.div.className = 'killSwitch';
-        this.entry.appendChild(document.createTextNode(todoInput));
-        this.entry.appendChild(div);
-        this.list.appendChild(entry);
+        this.entry.appendChild(document.createTextNode(this.todoInput));
+        this.entry.appendChild(this.div);
+        this.list.appendChild(this.entry);
 
         console.log(this.entry);
 
@@ -142,8 +142,13 @@ module.exports =  Task;
         init: function() {
             console.log(this);
 
-
-            List();
+//            document.getElementById('todo_input').onkeydown = function(e){
+//                if(e.keyCode == 13){
+//                      List();
+//                    console.log('brrr');
+//                }
+//            }
+//            List();
 //            List.add();
 //            console.log('yoo');
 //            console.log(List.changeText2);
@@ -156,7 +161,7 @@ module.exports =  Task;
 //            task.foo();
 //            var test = new List();
 //               test;
-            console.log(new List().add());
+            //console.log(new List().add());
         }
     };
 

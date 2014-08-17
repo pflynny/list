@@ -27,8 +27,13 @@
         init: function() {
             console.log(this);
 
-
-            List();
+//            document.getElementById('todo_input').onkeydown = function(e){
+//                if(e.keyCode == 13){
+//                      List();
+//                    console.log('brrr');
+//                }
+//            }
+//            List();
 //            List.add();
 //            console.log('yoo');
 //            console.log(List.changeText2);
@@ -41,7 +46,7 @@
 //            task.foo();
 //            var test = new List();
 //               test;
-            console.log(new List().add());
+            //console.log(new List().add());
         }
     };
 
