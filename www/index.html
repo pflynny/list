@@ -18,61 +18,53 @@
             <input type="text" id="todo_input" class='new-to-do-input todo-input' autocomplete="off" autofocus>
 
             <ol id="todoList" class='todo-list'>
-                <!--<li draggable="true" class="todo-item">dnlvbfs</li>-->
-                <!--<li draggable="true" class="todo-item">that</li>-->
-                <!--<li draggable="true" class="todo-item">this</li>-->
+                <li draggable="true" class="todo-item">dnlvbfs</li>
+                <li draggable="true" class="todo-item">that</li>
+                <li draggable="true" class="todo-item">this</li>
             </ol>
         </div>
     </div>
     <script src='/assets/js/production.min.js'></script>
 
-    <script>
-        var source;
-        var option = document.getElementsByClassName('todo-item');
-        var oi = document.getElementById('one');
-        // console.log(option);
+    <!--<script>-->
+        <!--var source;-->
+        <!--var option = document.getElementsByClassName('todo-item');-->
+        <!--var oi = document.getElementById('one');-->
+        <!--// console.log(option);-->
 
 
-        function dragStarted(evt){
-            //start drag
-            source=evt.target;
-            //set data
-            evt.dataTransfer.setData("text/plain", evt.target.innerHTML);
-            //specify allowed transfer
-            evt.dataTransfer.effectAllowed = "move";
-        }
+        <!--function dragStarted(evt){-->
+            <!--source=evt.target;-->
+            <!--evt.dataTransfer.setData("text/plain", evt.target.innerHTML);-->
+            <!--evt.dataTransfer.effectAllowed = "move";-->
+        <!--}-->
 
-        function draggingOver(evt){
-            //drag over
-            evt.preventDefault();
-            //specify operation
-            evt.dataTransfer.dropEffect = "move";
-        }
+        <!--function draggingOver(evt){-->
+            <!--evt.preventDefault();-->
+            <!--evt.dataTransfer.dropEffect = "move";-->
+        <!--}-->
 
-        function dropped(evt){
-            //drop
-            evt.preventDefault();
-            evt.stopPropagation();
-            //update text in dragged item
-            source.innerHTML = evt.target.innerHTML;
-            //update text in drop target
-            evt.target.innerHTML = evt.dataTransfer.getData("text/plain");
-        }
+        <!--function dropped(evt){-->
+            <!--evt.preventDefault();-->
+            <!--evt.stopPropagation();-->
+            <!--source.innerHTML = evt.target.innerHTML;-->
+            <!--evt.target.innerHTML = evt.dataTransfer.getData("text/plain");-->
+        <!--}-->
 
-        function poo() {
-            alert('poo');
-        }
+        <!--function boo() {-->
+            <!--alert('boo');-->
+        <!--}-->
 
-        for (var i = 0; i < option.length; i++) {
-            console.log(option[i]);
-//            option[i].addEventListener('dragstart', poo, false);
-            option[i].addEventListener('dragstart', dragStarted, false);
-            option[i].addEventListener('dragover', draggingOver, false);
-            option[i].addEventListener('drop', dropped, false);
-        }
+        <!--for (var i = 0; i < option.length; i++) {-->
+            <!--console.log(option[i]);-->
+<!--//            option[i].addEventListener('dragstart', boo, false);-->
+            <!--option[i].addEventListener('dragstart', dragStarted, false);-->
+            <!--option[i].addEventListener('dragover', draggingOver, false);-->
+            <!--option[i].addEventListener('drop', dropped, false);-->
+        <!--}-->
 
 
-    </script>
+    <!--</script>-->
 
 
 

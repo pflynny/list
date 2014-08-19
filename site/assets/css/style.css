@@ -63,14 +63,16 @@ ol {
 }
 
 li {
-
     border-top: 1px solid #eee;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 14px;
+    padding-bottom: 6px;
     padding-left: 10%;
     padding-right: 10%;
     display: block;
     cursor: pointer;
+    display: block;
+    /* min-height: 20; */
+    margin: 10px 0
 }
 
 li:last-child {
