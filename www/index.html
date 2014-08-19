@@ -34,7 +34,7 @@
 
 
         function dragStarted(evt){
-            source=evt.target;
+            source = evt.target;
             evt.dataTransfer.setData("text/plain", evt.target.innerHTML);
             evt.dataTransfer.effectAllowed = "move";
         }
