@@ -26,45 +26,45 @@
     </div>
     <script src='/assets/js/production.min.js'></script>
 
-    <!--<script>-->
-        <!--var source;-->
-        <!--var option = document.getElementsByClassName('todo-item');-->
-        <!--var oi = document.getElementById('one');-->
-        <!--// console.log(option);-->
+    <script>
+        var source;
+        var option = document.getElementsByClassName('todo-item');
+        var oi = document.getElementById('one');
+        // console.log(option);
 
 
-        <!--function dragStarted(evt){-->
-            <!--source=evt.target;-->
-            <!--evt.dataTransfer.setData("text/plain", evt.target.innerHTML);-->
-            <!--evt.dataTransfer.effectAllowed = "move";-->
-        <!--}-->
+        function dragStarted(evt){
+            source=evt.target;
+            evt.dataTransfer.setData("text/plain", evt.target.innerHTML);
+            evt.dataTransfer.effectAllowed = "move";
+        }
 
-        <!--function draggingOver(evt){-->
-            <!--evt.preventDefault();-->
-            <!--evt.dataTransfer.dropEffect = "move";-->
-        <!--}-->
+        function draggingOver(evt){
+            evt.preventDefault();
+            evt.dataTransfer.dropEffect = "move";
+        }
 
-        <!--function dropped(evt){-->
-            <!--evt.preventDefault();-->
-            <!--evt.stopPropagation();-->
-            <!--source.innerHTML = evt.target.innerHTML;-->
-            <!--evt.target.innerHTML = evt.dataTransfer.getData("text/plain");-->
-        <!--}-->
+        function dropped(evt){
+            evt.preventDefault();
+            evt.stopPropagation();
+            source.innerHTML = evt.target.innerHTML;
+            evt.target.innerHTML = evt.dataTransfer.getData("text/plain");
+        }
 
-        <!--function boo() {-->
-            <!--alert('boo');-->
-        <!--}-->
+        function boo() {
+            alert('boo');
+        }
 
-        <!--for (var i = 0; i < option.length; i++) {-->
-            <!--console.log(option[i]);-->
-<!--//            option[i].addEventListener('dragstart', boo, false);-->
-            <!--option[i].addEventListener('dragstart', dragStarted, false);-->
-            <!--option[i].addEventListener('dragover', draggingOver, false);-->
-            <!--option[i].addEventListener('drop', dropped, false);-->
-        <!--}-->
+        for (var i = 0; i < option.length; i++) {
+            console.log(option[i]);
+//            option[i].addEventListener('dragstart', boo, false);
+            option[i].addEventListener('dragstart', dragStarted, false);
+            option[i].addEventListener('dragover', draggingOver, false);
+            option[i].addEventListener('drop', dropped, false);
+        }
 
 
-    <!--</script>-->
+    </script>
 
 
 

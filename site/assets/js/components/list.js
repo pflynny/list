@@ -41,7 +41,7 @@ Todo.prototype = {
 
     },
     done: function() {
-       this.el.classList.add("done");
+        return this.el;
     },
     render: function() {
         return this.el;
@@ -70,8 +70,8 @@ function List(options) {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     todoInput.addEventListener('keydown', this.handleKeyDown, false);
 
-    this.handleDrag = this.handleDrag.bind(this);
-    entry.addEventListener('click', this.handleDrag, false);
+//    this.handleDrag = this.handleDrag.bind(this);
+//    entry.addEventListener('click', this.handleDrag, false);
 
 
 }
@@ -94,13 +94,13 @@ List.prototype = {
         this.todoInput.value =  " ";
     },
 
-    killSwitch: function() {
-        $('.killSwitch').on('click', function() {
-            $(this).parent().hide();
-
-        });
-    },
-
+//    killSwitch: function() {
+//        $('.killSwitch').on('click', function() {
+//            $(this).parent().hide();
+//
+//        });
+//    },
+//
     strikeOut: function() {
         $('.todo-list').on('click', 'li', function() {
             $(this).addClass('done');

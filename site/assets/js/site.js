@@ -25,7 +25,7 @@
 
     Site.prototype = {
         init: function() {
-            console.log(this);
+//            console.log(this);
 
             var list = new List({
                 el: 'todo'
