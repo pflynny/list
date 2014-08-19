@@ -18,6 +18,8 @@ function Todo(val, list){
 
     div.appendChild(divContent);
     div.className = 'killSwitch';
+    entry.className = 'todo-item';
+    entry.setAttribute('draggable', 'true');
     entry.appendChild(document.createTextNode(val));
     entry.appendChild(div);
 
