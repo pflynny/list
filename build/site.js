@@ -40,11 +40,10 @@ Todo.prototype = {
     edit: function() {
         var val = this.el.val;
         console.log(val);
-        
-
     },
     done: function() {
        this.el.classList.add("done");
+        console.log("we're here " + this.el);
     },
     render: function() {
         return this.el;
@@ -73,8 +72,8 @@ function List(options) {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     todoInput.addEventListener('keydown', this.handleKeyDown, false);
 
-//    this.handleDrag = this.handleDrag.bind(this);
-//    entry.addEventListener('click', this.handleDrag, false);
+    this.handleDrag = this.handleDrag.bind(this);
+    entry.addEventListener('click', this.handleDrag, false);
 
 
 }
@@ -113,35 +112,35 @@ List.prototype = {
 //        });
 //    },
 
-//    handleDrag: function() {
-//        var source;
-//        console.log('here');
-//        for (var i = 0; i < this.todos.length; i++) {
-//            console.log(this.todos[i]);
-//            this.todos[i].addEventListener('dragstart', this.dragStarted, false);
-//            this.todos[i].addEventListener('dragover', this.draggingOver, false);
-//            this.todos[i].addEventListener('drop', this.dropped, false);
-//        }
-//
-//    },
-//
-//    dragStarted: function(e){
-//        source = e.target;
-//        e.dataTransfer.setData("text/plain", e.target.innerHTML);
-//        e.dataTransfer.effectAllowed = "move";
-//    },
-//
-//    draggingOver: function(e) {
-//        e.preventDefault();
-//        e.dataTransfer.dropEffect = "move";
-//    },
-//
-//    dropped: function(e) {
-//        e.preventDefault();
-//        e.stopPropagation();
-//        source.innerHTML = e.target.innerHTML;
-//        e.target.innerHTML = e.dataTransfer.getData("text/plain");
-//    },
+    handleDrag: function() {
+        var source;
+        console.log('here');
+        for (var i = 0; i < this.todos.length; i++) {
+            console.log(this.todos[i]);
+            this.todos[i].addEventListener('dragstart', this.dragStarted, false);
+            this.todos[i].addEventListener('dragover', this.draggingOver, false);
+            this.todos[i].addEventListener('drop', this.dropped, false);
+        }
+
+    },
+
+    dragStarted: function(e){
+        source = e.target;
+        e.dataTransfer.setData("text/plain", e.target.innerHTML);
+        e.dataTransfer.effectAllowed = "move";
+    },
+
+    draggingOver: function(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = "move";
+    },
+
+    dropped: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        source.innerHTML = e.target.innerHTML;
+        e.target.innerHTML = e.dataTransfer.getData("text/plain");
+    },
 
     removeItem: function(todo) {
         var index;
