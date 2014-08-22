@@ -26,7 +26,7 @@ function Todo(val, list){
     div.addEventListener('click', this.handleRemove, false);
 
     this.done = this.done.bind(this);
-    el.addEventListener('click', this.done, false);
+    this.el.addEventListener('click', this.done, false);
 }
 
 Todo.prototype = {
@@ -42,7 +42,7 @@ Todo.prototype = {
     },
     done: function() {
        this.el.classList.add("done");
-        console.log("we're here " + this.el);
+        console.log("we're here ", this.el);
     },
     render: function() {
         return this.el;
@@ -95,8 +95,6 @@ List.prototype = {
         this.todoInput.value =  " ";
     },
 
-
-
 //    killSwitch: function() {
 //        $('.killSwitch').on('click', function() {
 //            $(this).parent().hide();
@@ -113,7 +111,7 @@ List.prototype = {
 
     handleDrag: function() {
         var source;
-        console.log('here');
+
         for (var i = 0; i < this.todos.length; i++) {
             console.log(this.todos[i]);
             this.todos[i].addEventListener('dragstart', this.dragStarted, false);
