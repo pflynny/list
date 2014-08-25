@@ -95,6 +95,7 @@ List.prototype = {
         var entry = new Todo(val, this);
         this.list.appendChild(entry.render());
         this.todos.push(entry);
+        this.handleDrag();
     },
 
     clearInput: function() {
@@ -118,11 +119,13 @@ List.prototype = {
     handleDrag: function() {
         var source;
 
+        var self = this;
+
         for (var i = 0; i < this.todos.length; i++) {
-            console.log(this.todos[i]);
-            this.todos[i].addEventListener('dragstart', this.dragStarted, false);
-            this.todos[i].addEventListener('dragover', this.draggingOver, false);
-            this.todos[i].addEventListener('drop', this.dropped, false);
+            var todo = this.todos[i].el;
+            todo.addEventListener('dragstart', self.dragStarted, false);
+            todo.addEventListener('dragover', self.draggingOver, false);
+            todo.addEventListener('drop', self.dropped, false);
         }
 
     },
