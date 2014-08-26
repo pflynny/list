@@ -28,6 +28,16 @@ function Todo(val, list){
 
     this.done = this.done.bind(this);
     this.el.addEventListener('click', this.done, false);
+
+    this.dragStarted = this.dragStarted.bind(this);
+    this.draggingOver = this.draggingOver.bind(this);
+    this.dropped = this.dropped.bind(this);
+
+
+    this.el.addEventListener('dragstart', this.dragStarted, false);
+    this.el.addEventListener('dragover', this.draggingOver, false);
+    this.el.addEventListener('drop', this.dropped, false);
+
 }
 
 Todo.prototype = {
@@ -50,6 +60,22 @@ Todo.prototype = {
     },
     handleRemove: function() {
         this.remove();
+    },
+    dragStarted: function(e){
+        source = e.target;
+//        e.dataTransfer.setData("text/plain", e.target.innerHTML);
+        e.dataTransfer.effectAllowed = "move";
+    },
+    draggingOver: function(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = "move";
+    },
+    dropped: function(e) {
+        e.preventDefault();
+//        e.stopPropagation();
+//        console.log(e);
+//        source.innerHTML = e.target.innerHTML;
+//        e.target.innerHTML = e.dataTransfer.getData("text/plain");
     }
 }
 
@@ -73,12 +99,37 @@ function List(options) {
     todoInput.addEventListener('keydown', this.handleKeyDown, false);
 
     this.handleDrag = this.handleDrag.bind(this);
-    entry.addEventListener('click', this.handleDrag, false);
-
+    this.handleDrop = this.handleDrop.bind(this);
+    list.addEventListener('dragstart', this.handleDrag, false);
+    list.addEventListener('drop', this.handleDrop, false);
 
 }
 
 List.prototype = {
+    handleDrag: function(e){
+        console.log(e);
+        this.draggingEl = e.srcElement;
+    },
+    handleDrop: function(e){
+        console.log(e);
+        var drop = e.srcElement;
+
+        if(drop === this.draggingEl) {
+            return;
+        }
+
+        var position = drop.compareDocumentPosition(this.draggingEl);
+        console.log(position);
+
+        if(position === 4) {
+            drop.parentNode.insertBefore(this.draggingEl, drop);
+        }
+
+        if(position === 2) {
+            drop.parentNode.insertBefore(this.draggingEl, drop.nextElementSibling);
+        }
+
+    },
     handleKeyDown: function(e) {
         if(e.keyCode == 13){
             var val = this.todoInput.value;
@@ -90,57 +141,10 @@ List.prototype = {
         var entry = new Todo(val, this);
         this.list.appendChild(entry.render());
         this.todos.push(entry);
-        this.handleDrag();
     },
 
     clearInput: function() {
         this.todoInput.value =  " ";
-    },
-
-//    killSwitch: function() {
-//        $('.killSwitch').on('click', function() {
-//            $(this).parent().hide();
-//
-//        });
-//    },
-//
-//    strikeOut: function() {
-//        $('.todo-list').on('click', 'li', function() {
-//            $(this).addClass('done');
-//            $('.killSwitch', this).show();
-//        });
-//    },
-
-    handleDrag: function() {
-        var source;
-
-        var self = this;
-
-        for (var i = 0; i < this.todos.length; i++) {
-            var todo = this.todos[i].el;
-            todo.addEventListener('dragstart', self.dragStarted, false);
-            todo.addEventListener('dragover', self.draggingOver, false);
-            todo.addEventListener('drop', self.dropped, false);
-        }
-
-    },
-
-    dragStarted: function(e){
-        source = e.target;
-        e.dataTransfer.setData("text/plain", e.target.innerHTML);
-        e.dataTransfer.effectAllowed = "move";
-    },
-
-    draggingOver: function(e) {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = "move";
-    },
-
-    dropped: function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        source.innerHTML = e.target.innerHTML;
-        e.target.innerHTML = e.dataTransfer.getData("text/plain");
     },
 
     removeItem: function(todo) {
@@ -151,7 +155,7 @@ List.prototype = {
                 index = i;
             }
         }
-        console.log(index);
+//        console.log(index);
         if (typeof index !== "undefined") {
             this.todos.splice(index, 1);
         }
